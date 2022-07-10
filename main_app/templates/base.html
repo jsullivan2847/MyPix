@@ -17,12 +17,18 @@
             </div>
         </div>
         <div class="right">
+            {% if user.is_authenticated%}
+            <div>
+                <a href="{% url 'logout' %}">Log Out</a>
+            </div>
+            {% else %}
             <div>
                 <a href="{% url 'login' %}">Log In</a>
             </div>
             <div>
                 <a href="{% url 'signup' %}">Sign Up</a>
             </div>
+            {% endif %}
         </div>
     </nav>
     <main>{% block content %} {% endblock %}</main>

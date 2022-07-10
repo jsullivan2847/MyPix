@@ -22,3 +22,6 @@ def signup(request):
     context = {'form': form, 'error': error}
     return render(request, 'registration/signup.html', context)
 
+
+def TimeLine(request):
+    return render(request, 'home.html')
