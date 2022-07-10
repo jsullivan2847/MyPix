@@ -1,0 +1,25 @@
+body{
+
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+ul{
+    list-style: none;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.left{
+    display: flex;
+    justify-content: space-around;
+}
+.right {
+    width: 150px;
+    display: flex;
+    justify-content: space-around;
+}
+
