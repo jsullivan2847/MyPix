@@ -5,8 +5,11 @@ from django.contrib.auth.forms import UserCreationForm
 from .models import Profile, Photo, User
 
 def Home(request):
-    user  = request.user
-    return render(request,'home.html')
+    if request.user.is_authenticated:
+        user  = request.user
+        profile = Profile.objects.get(id = user.id)
+        return render(request,'home.html', {'profile': profile})
+    else: return(render(request, 'home.html'))
 
 def signup(request):
     error = ''

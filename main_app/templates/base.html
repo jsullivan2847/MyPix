@@ -19,6 +19,9 @@
         <div class="right">
             {% if user.is_authenticated %}
             <div>
+                <a href="{% url 'profile_show' profile.id %}">{{ profile.name }}</a>
+            </div> 
+            <div>
                 <a href="{% url 'logout' %}">Log Out</a>
             </div>
             {% else %}
