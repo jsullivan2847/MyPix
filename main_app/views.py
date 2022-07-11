@@ -1,12 +1,11 @@
-from multiprocessing import context
-from typing import List
 from django.shortcuts import render, redirect
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, UpdateView, DetailView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
-from .models import *
+from .models import Profile, Photo, User
 
 def Home(request):
+    user  = request.user
     return render(request,'home.html')
 
 def signup(request):
@@ -27,8 +26,22 @@ def signup(request):
 # def TimeLine(request):
 #     return render(request, 'home.html')
 
+class AddProfile(CreateView):
+    model = Profile
+    fields = '__all__'
+    success_url = '/'
+
+class ProfileShow(DetailView):
+    model = Profile
+    template_name = 'main_app/profile_show.html'
+
+class EditProfile(UpdateView):
+    model = Profile
+
 class PhotoList(ListView):
     model = Photo
 
 class AddPhoto(CreateView):
     model = Photo
+    fields = '__all__'
+    success_url = '/'

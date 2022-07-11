@@ -1,0 +1,15 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>New profile</h1>
+
+<form action="{% url 'profile_new' %}" method="POST">
+    {% csrf_token %}
+    <table>
+        {{ form.as_p}}
+        <input type="submit"value="submit">
+    </table>
+</form>
+
+
+
+{% endblock %}
