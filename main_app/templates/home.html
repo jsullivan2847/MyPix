@@ -2,7 +2,6 @@
 
 {% if user.is_authenticated %}
 
-<h1>timeline</h1>
 <div class="photo-post-form">
     <h3>Post Photo Here</h3>
 <form action="{% url 'post_photo' profile.id %}" 
@@ -21,7 +20,15 @@ enctype="multipart/form-data">
 {% for photo in photo_list %}
 <div>
     <img src="{{photo.photo_url}}" class="timeline-photos"/>
-    <p>posted by <a href="{% url 'profile_show' photo.user.id %}">@{{photo.user.name}}</a></p>
+    {% if photo.user.id == profile.id %}
+    <p class="caption">{{photo.caption}}</p>
+    <p><span class="posted-by">posted by<a href="{% url 'profile_show' photo.user.id %}">@You</a></span></p>
+    <p><a href="{% url 'edit_photo' photo.id %}">Edit</a></p>
+    {% else %}
+    <p>{{photo.caption}}</p>
+    <p><span class="posted-by">posted by <a href="{% url 'profile_show' photo.user.id %}">@{{photo.user.name}}</a></span></p>
+    {% endif %}
+
 </div>
 
 {% endfor %}

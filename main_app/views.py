@@ -90,6 +90,15 @@ def ProfileShow(request, profile_id):
     'photos': photos,
     })
 
+
+
+
+
+def EditPhotoForm(request, photo_id):
+    form = PhotoForm()
+    return render('edit_photo', photo_id)
+
+
 class EditProfile(UpdateView):
     model = Profile
 

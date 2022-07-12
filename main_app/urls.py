@@ -11,5 +11,7 @@ urlpatterns = [
     path('profile/<int:pk>/edit', views.EditProfile.as_view(), name='profile_update'),
     # PHOTOS
     path('profile/<int:profile_id>/post_photo', views.PostPhoto, name='post_photo'),
+    path('photo/<int:photo_id>/edit', views.EditPhotoForm, name='edit_photo'),
+    # path('photo/<int:photo_id>/update', views.UpdatePhoto, name='update_photo'),
    
 ]

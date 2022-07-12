@@ -1,0 +1,18 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="photo-post-form">
+    <img src="{{photo.photo_url}}" alt="{{photo.caption}}" class="timeline-photos">
+    <p>{{photo.caption}}</p>
+    <h3>Edit Post</h3>
+<form action="{% url 'edit_photo' photo.id%}" 
+method="POST"
+enctype="multipart/form-data"
+class="photo-post-form">
+{% csrf_token %}
+<table>
+    {{form.as_table}}
+</table>
+<input type="submit" value="Edit Post">
+</form>
+</div>
+{% endblock%}

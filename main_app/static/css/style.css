@@ -11,6 +11,7 @@ ul{
 nav{
     left: 0;
     top: 0;
+    z-index: 1;
     width: 100%;
     position: fixed;
     display: flex;
@@ -18,6 +19,7 @@ nav{
     align-items: center;
     background-color: rgb(197, 161, 114);
     padding: 10px;
+
 }
 .left{
     display: flex;
@@ -32,6 +34,8 @@ nav{
     width: 200px;
 }
 .main-content{
+    top: 100px;
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -43,7 +47,6 @@ nav{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-   
     display: flex;
     margin: 10px;
 }
@@ -63,4 +66,7 @@ nav{
 .logout{
     display: flex;
     align-items: flex-end;
+}
+.posted-by{
+    font-size: 10px;
 }
