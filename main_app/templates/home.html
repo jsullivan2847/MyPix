@@ -3,6 +3,21 @@
 {% if user.is_authenticated %}
 
 <h1>timeline</h1>
+<form action="{% url 'post_photo' profile.id %}" 
+method="POST"
+enctype="multipart/form-data">
+{% csrf_token %}
+    <input type="file" name="photo_file" id="">
+    <input type="submit" value="Upload Photo">
+</form>
+
+{% for photo in photo_list %}
+<div>
+    <img src="{{photo.photo_url}}" class="prof_pic"/>
+    <p>posted by <a href="">@{{photo.user.name}}</a></p>
+</div>
+
+{% endfor %}
 
 {% else %}
 

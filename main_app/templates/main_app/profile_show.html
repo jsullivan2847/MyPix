@@ -1,4 +1,26 @@
 {% extends 'base.html' %} {% block content %}
 
 <h1>{{profile.name}}'s profile page</h1>
+{% if profile.profile_pic %}
+<img src="{{profile.profile_pic}}" class="prof_pic" >
+{% endif %}
+<form action="{% url 'profile_photo' profile.id %}"
+enctype="multipart/form-data"
+method="POST">
+{% csrf_token %}
+<input type="file" name="photo_file">
+<input type="submit" class="btn" value="Upload Photo">
+</form>
+
+<h3>{{profile.name}}'s posts</h3>
+{% for photo in photos %}
+<div>
+    <img src="{{photo.photo_url}}" 
+    alt="{{photo.caption}}"
+    class="prof_pic">
+    <p>{{photo.caption}}</p>
+</div>
+{% endfor %}
+
+
 {% endblock %}

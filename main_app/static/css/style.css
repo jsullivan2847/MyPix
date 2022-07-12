@@ -1,5 +1,4 @@
 body{
-
 }
 a{
     text-decoration: none;
@@ -21,5 +20,8 @@ nav{
     width: 150px;
     display: flex;
     justify-content: space-around;
+}
+.prof_pic{
+    width: 200px;
 }
 
