@@ -21,7 +21,7 @@ enctype="multipart/form-data">
 {% for photo in photo_list %}
 <div>
     <img src="{{photo.photo_url}}" class="timeline-photos"/>
-    <p>posted by <a href="">@{{photo.user.name}}</a></p>
+    <p>posted by <a href="{% url 'profile_show' photo.user.id %}">@{{photo.user.name}}</a></p>
 </div>
 
 {% endfor %}
