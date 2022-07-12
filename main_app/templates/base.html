@@ -18,9 +18,11 @@
         </div>
         <div class="right">
             {% if user.is_authenticated %}
+            {% if profile %}
             <div>
                 <a href="{% url 'profile_show' profile.id %}">{{ profile.name }}</a>
             </div> 
+            {% endif %}
             <div>
                 <a href="{% url 'logout' %}">Log Out</a>
             </div>
