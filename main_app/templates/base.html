@@ -10,20 +10,23 @@
     <title>Photo App</title>
 </head>
 <body>
-    <nav>
+    <nav class="logout">
         <div class="left">
-            <div>
+            <div >
                 <a href="{% url 'home' %}">Photo App</a>
             </div>
         </div>
         <div class="right">
             {% if user.is_authenticated %}
             {% if profile %}
-            <div>
-                <a href="{% url 'profile_show' profile.id %}">{{ profile.name }}</a>
+            <div class="thumbnail-container">
+                <a href="{% url 'profile_show' profile.id %}">
+                    <img src="{{profile.profile_pic}}" alt="" class="thumbnail">
+                    {{ profile.name }}
+                </a>
             </div> 
             {% endif %}
-            <div>
+            <div class="logout">
                 <a href="{% url 'logout' %}">Log Out</a>
             </div>
             {% else %}
@@ -36,6 +39,6 @@
             {% endif %}
         </div>
     </nav>
-    <main>{% block content %} {% endblock %}</main>
+    <main class="main-content">{% block content %} {% endblock %}</main>
 </body>
 </html>

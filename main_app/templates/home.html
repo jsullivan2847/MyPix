@@ -3,17 +3,24 @@
 {% if user.is_authenticated %}
 
 <h1>timeline</h1>
+<div class="photo-post-form">
+    <h3>Post Photo Here</h3>
 <form action="{% url 'post_photo' profile.id %}" 
 method="POST"
 enctype="multipart/form-data">
 {% csrf_token %}
+<table>
+    {{form.as_table}}
     <input type="file" name="photo_file" id="">
     <input type="submit" value="Upload Photo">
+</table>
 </form>
+</div>
+
 
 {% for photo in photo_list %}
 <div>
-    <img src="{{photo.photo_url}}" class="prof_pic"/>
+    <img src="{{photo.photo_url}}" class="timeline-photos"/>
     <p>posted by <a href="">@{{photo.user.name}}</a></p>
 </div>
 
