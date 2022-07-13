@@ -13,7 +13,7 @@ This project is currently deployed on Heroku [here]
 
 <img alt="https://imgur.com/a/doC7kpk" width="200"/>  
 <br/>
-<img alt="User Select page" src="https://i.imgur.com/dEstsca.jpg" width="200"/><img alt="User Edit page" src="https://i.imgur.com/laDsF9f.jpg" width="200"/>
+<img alt="User Select page" src="https://i.imgur.com/TX2iuTX.jpg" width="200"/><img alt="User Edit page" src="https://i.imgur.com/laDsF9f.jpg" width="200"/>
 <img alt="Dashboard" src="https://i.imgur.com/3WTK2t1.jpg" height="300"/>
 <img alt="Dashboard" src="https://i.imgur.com/eqUnbX8.jpg" height="300"/>
 
