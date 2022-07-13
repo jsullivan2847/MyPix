@@ -95,9 +95,16 @@ def ProfileShow(request, profile_id):
 
 
 def EditPhotoForm(request, photo_id):
+    photo = Photo.objects.get(id = photo_id)
     form = PhotoForm()
-    return render('edit_photo', photo_id)
+    return render(request,'main_app/edit_photo_form.html', {'photo': photo, 'form': form})
 
+def PhotoUpdate(request, photo_id):
+    photo = Photo.objects.get(id = photo_id)
+    form = PhotoForm(request.POST, instance=photo)
+    if form.is_valid():
+        form.save()
+        return redirect('edit_photo', photo_id)
 
 class EditProfile(UpdateView):
     model = Profile
