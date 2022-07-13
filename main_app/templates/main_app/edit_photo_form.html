@@ -16,6 +16,12 @@
     <input type="submit" value="Edit Post">
     </form>
     </div>
+    <div>
+        <form action="{% url 'photo_delete' photo.id %}" method="POST">
+            {% csrf_token%}
+            <input type="submit" value="delete">
+        </form>
+    </div>
 </div>
 
 {% endblock%}

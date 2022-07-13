@@ -114,7 +114,13 @@ def PhotoUpdate(request, photo_id):
         form.save()
         return redirect('edit_photo', photo_id)
 
-
+def PhotoDelete(request, photo_id):
+    photo = Photo.objects.get(id = photo_id)
+    profile = Profile.objects.get(id = photo.user.id)
+    if request.method == "POST":
+        photo.delete()
+        return render(request, "home.html", {'profile': profile})
+    
 
 @login_required
 class PhotoList(ListView):
