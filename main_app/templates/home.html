@@ -10,8 +10,11 @@ enctype="multipart/form-data">
 {% csrf_token %}
 <table>
     {{form.as_table}}
-    <input type="file" name="photo_file" id="">
-    <input type="submit" value="Upload Photo">
+    <input type="text" name="caption" placeholder="caption here">
+    <label for="custom" class="file-thing"> Choose File
+        <input id="custom"type="file" name="photo_file">
+    </label>
+    <input class="file-thing"type="submit" value="Upload Photo">
 </table>
 </form>
 </div>

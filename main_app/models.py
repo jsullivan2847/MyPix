@@ -6,6 +6,7 @@ from django.urls import reverse
 
 
 
+
 class Profile(models.Model):
     name = models.CharField(max_length=100)
     profile_pic = models.CharField(max_length=100)
@@ -19,5 +20,4 @@ class Photo(models.Model):
     photo_url = models.CharField(max_length=200)
     caption = models.CharField(max_length=150)
     user = models.ForeignKey(Profile, on_delete=models.CASCADE)
-
 

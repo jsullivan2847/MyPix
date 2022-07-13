@@ -1,24 +1,34 @@
 {% extends 'base.html' %} {% block content %}
-
-<h1>{{profile.name}}'s profile page</h1>
+<div class="profile-page">
+    <div class="header">
+        
 {% if profile.profile_pic %}
 <img src="{{profile.profile_pic}}" class="prof_pic" >
 {% endif %}
 <form action="{% url 'profile_photo' profile.id %}"
 enctype="multipart/form-data"
-method="POST">
+method="POST"
+class="photo-post-form">
 {% csrf_token %}
-<input type="file" name="photo_file">
-<input type="submit" class="btn" value="Upload Photo">
+<label for="custom" class="file-thing"> Choose File
+    <input id="custom"type="file" name="photo_file">
+</label>
+<input class="file-thing"type="submit" class="btn" value="Upload Photo">
 </form>
+<h1>{{profile.name}}</h1>
+    </div>
 
-<h3>{{profile.name}}'s posts</h3>
-{% for photo in photos %}
+<div  class="profile-show-photos">
+    {% for photo in photos %}
 <div>
+    <a href="{% url 'edit_photo' photo.id %}">
     <img src="{{photo.photo_url}}" 
     alt="{{photo.caption}}"
-    class="prof_pic">
+    class="timeline-photos">
+    </a>
     <p>{{photo.caption}}</p>
+</div>
+</div>
 </div>
 {% endfor %}
 

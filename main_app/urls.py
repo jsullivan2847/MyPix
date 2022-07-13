@@ -8,7 +8,6 @@ urlpatterns = [
     path('profile/new', views.AddProfile, name = 'profile_new'),
     path('profile/<int:profile_id>', views.ProfileShow, name='profile_show'),
     path('profile/<int:profile_id>/add_photo', views.AddProfilePhoto, name = 'profile_photo'),
-    path('profile/<int:pk>/edit', views.EditProfile.as_view(), name='profile_update'),
     # PHOTOS
     path('profile/<int:profile_id>/post_photo', views.PostPhoto, name='post_photo'),
     path('photo/<int:photo_id>/', views.EditPhotoForm, name='edit_photo'),
