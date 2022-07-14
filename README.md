@@ -3,8 +3,6 @@
 A simple photo posting app with user profiles and full CRUD operations. Your photos can have captions, 
 and you can customize your profile name and picture.
 
-This project is currently deployed on Heroku [here](https://django-photo-app.herokuapp.com/)
-
 # Technologies Used 
 - Django backend
 - Django template frontend
@@ -18,7 +16,7 @@ This project is currently deployed on Heroku [here](https://django-photo-app.her
 # Getting Started
 
 
-Streepflix is currently deployed on netlify and you can try it out for yourself [here](https://streepflix.netlify.app/). All you have to do is create a user profile, log in, and get to watching!
+This project is currently deployed on Heroku [here](https://django-photo-app.herokuapp.com/)
 
 # Unsolved Problems
 - Had issues connected AWS photo uploading forms with regular forms
