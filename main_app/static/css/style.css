@@ -93,7 +93,7 @@ input[type="file"]{
     cursor: pointer;
 }
 .profile-show-photos{
-    margin-left: 20px;
+    margin-left: 100px;
     display: flex;
     flex-direction: column;
 }
