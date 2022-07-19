@@ -1,5 +1,6 @@
 body{
     font-family: poppins;
+   
 }
 a{
     text-decoration: none;
@@ -49,7 +50,7 @@ nav{
     display: flex;
 }
 .timeline-photos{
-    width: 700px;
+    width: 40vw;
 }
 .thumbnail{
     border-radius: 2px;
@@ -72,6 +73,7 @@ nav{
     align-items: flex-end;
 }
 .posted-by{
+    color: darkcyan;
     font-size: 10px;
 }
 .profile-page{
@@ -82,6 +84,8 @@ nav{
     justify-content: space-between;
 }
 .header{
+    height: 250px;
+    width: 300px;
     background-color:rgb(196,161,113);
     display: flex;
     flex-direction: column;
@@ -127,8 +131,14 @@ a:hover{
     font-size: 20px;
 }
 
-@media screen and(min-width: 100px) {
-    body{
-        background-color: red;
+@media only screen and (max-width: 650px){
+    .photo-container{
+        font-size: 8px;
+    }
+    .prof_pic{
+        width: 40vw;
+    }
+    .header{
+
     }
 }

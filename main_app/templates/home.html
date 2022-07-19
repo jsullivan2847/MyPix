@@ -10,7 +10,6 @@ enctype="multipart/form-data">
 {% csrf_token %}
 <table>
     {{form.as_table}}
-    <input type="text" name="caption" placeholder="caption here">
     <label for="custom" class="file-thing"> Choose File
         <input id="custom"type="file" name="photo_file">
     </label>
@@ -21,7 +20,7 @@ enctype="multipart/form-data">
 
 
 {% for photo in photo_list %}
-<div>
+<div class="photo-container">
     <img src="{{photo.photo_url}}" class="timeline-photos"/>
     {% if photo.user.id == profile.id %}
     <p class="caption">{{photo.caption}}</p>
@@ -29,7 +28,7 @@ enctype="multipart/form-data">
     <p><a href="{% url 'edit_photo' photo.id %}">Edit</a></p>
     {% else %}
     <p>{{photo.caption}}</p>
-    <p><span class="posted-by">posted by <a href="{% url 'profile_show' photo.user.id %}">@{{photo.user.name}}</a></span></p>
+    <p><span class="posted-by">posted by  <a href="{% url 'profile_show' photo.user.id %}"> @{{photo.user.name}}</a></span></p>
     {% endif %}
 
 </div>
