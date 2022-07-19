@@ -22,6 +22,7 @@ This project is currently deployed on Heroku [here](https://django-photo-app.her
 - Had issues connected AWS photo uploading forms with regular forms
 
 # Future Improvements
+- Get Photos to display in negative index
 - Text posts
 - More styling
 
